@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using IOLibrary;
 
@@ -10,6 +11,12 @@ namespace Day1
         {
             Part1();
             Part2();
+
+            var lines = FileHelper.GetLines("Day1");
+
+            var inputIntegers = lines.Select(int.Parse).ToList();
+            Part1Linq(inputIntegers);
+            Part2Linq(inputIntegers);
 
             static void Part2()
             {
@@ -67,6 +74,25 @@ namespace Day1
 
                 if (!numbersFound) Console.WriteLine("No 2 numbers that add to 2020 found.");
             }
+        }
+
+        private static void Part1Linq(IReadOnlyCollection<int> parsedInput)
+        {
+            var (x, y) = parsedInput
+                .SelectMany(x => parsedInput, (x, y) => (x, y))
+                .FirstOrDefault(t => t.x + t.y == 2020);
+
+            Console.WriteLine(x * y);
+        }
+
+        private static void Part2Linq(IReadOnlyCollection<int> parsedInput)
+        {
+            var (x, y, z) = parsedInput
+                .SelectMany(x => parsedInput, (x, y) => (x, y))
+                .SelectMany(t => parsedInput, (t, z) => (t.x, t.y, z))
+                .FirstOrDefault(t => t.x + t.y + t.z == 2020);
+
+            Console.WriteLine(x * y * z);
         }
     }
 }
