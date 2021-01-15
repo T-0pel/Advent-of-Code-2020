@@ -29,7 +29,7 @@ namespace ConsoleProject.Days
             Console.WriteLine(x * y * z);
         }
 
-        public Day1Alternate() : base("Day1")
+        public Day1Alternate() : base(nameof(Day1))
         {
         }
     }
