@@ -9,12 +9,35 @@ namespace ConsoleProject
         {
             Console.WriteLine("Initializing Console...");
 
-            RunDay2();
-            RunDay2WithRecordType();
+            RunDay4();
+            //RunDay3Linq();
+            //RunDay3();
+            //RunDay2();
+            //RunDay2WithRecordType();
             //RunDay1();
             //RunDay1Alternate();
 
             Console.ReadKey();
+        }
+        private static void RunDay4()
+        {
+            var day4 = new Day4();
+            day4.RunTask1();
+            day4.RunTask2();
+        }
+
+        private static void RunDay3Linq()
+        {
+            var day3Linq = new Day3Linq();
+            day3Linq.RunTask1();
+            day3Linq.RunTask2();
+        }
+
+        private static void RunDay3()
+        {
+            var day3 = new Day3();
+            day3.RunTask1();
+            day3.RunTask2();
         }
 
         private static void RunDay2WithRecordType()
