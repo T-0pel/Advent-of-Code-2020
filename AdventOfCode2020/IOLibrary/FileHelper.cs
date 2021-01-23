@@ -16,5 +16,14 @@ namespace IOLibrary
 
             return lines;
         }
+
+        public static string GetText(string directory, string fileName = FileName)
+        {
+            var inputPath = Path.Combine(Environment.CurrentDirectory, $@"Data\{directory}\", fileName);
+
+            var lines = File.ReadAllText(inputPath);
+
+            return lines;
+        }
     }
 }

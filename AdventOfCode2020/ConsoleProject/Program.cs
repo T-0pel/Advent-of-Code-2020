@@ -10,6 +10,7 @@ namespace ConsoleProject
             Console.WriteLine("Initializing Console...");
 
             RunDay4();
+            RunDay4Alternate();
             //RunDay3Linq();
             //RunDay3();
             //RunDay2();
@@ -19,6 +20,14 @@ namespace ConsoleProject
 
             Console.ReadKey();
         }
+
+        private static void RunDay4Alternate()
+        {
+            var day4Alternate = new Day4Alternate();
+            day4Alternate.RunTask1();
+            day4Alternate.RunTask2();
+        }
+
         private static void RunDay4()
         {
             var day4 = new Day4();
